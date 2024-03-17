@@ -29,6 +29,28 @@ h2 {
     font-family: var(--title-font);
 }
 
+section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+article {
+    width: 25vw;
+}
+
+h3 {
+    font-family: var(--title-font);
+}
+
+h4 {
+    font-family: var(--title-font);
+}
+
+h5 {
+    font-family: var(--body-font);
+}
+
 p {
     font-family: var(--body-font);
 }

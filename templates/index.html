@@ -13,6 +13,15 @@
     <hr>
     <main>
         <h2>Feed</h2>
+        <section>
+            {% for post in posts %}
+            <article>
+                <h3>{{ post.title }}</h3>
+                <h4>{{ post.author }}</h4>
+                <h5>{{ post.published_on }}</h5>
+            </article>
+            {% endfor %}
+        </section>
     </main>
     <hr>
     <footer>
