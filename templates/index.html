@@ -1,31 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Homepage | Fleta</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-</head>
-<body>
-    <header>
-        <h1 id="wordmark">Fleta</h1>
-    </header>
-    <hr>
-    <main>
+{% extends 'base.html' %}
+
+{% block title %}
+Homepage
+{% endblock %}
+
+{% block content %}
         <h2>Feed</h2>
         <section>
             {% for post in posts %}
             <article>
-                <h3>{{ post.title }}</h3>
+                <h3>
+                    <a href="{{ url_for('get_post', post_id=post.id) }}">{{ post.title }}</a>
+                </h3>
                 <h4>{{ post.author }}</h4>
                 <h5>{{ post.published_on }}</h5>
             </article>
             {% endfor %}
         </section>
-    </main>
-    <hr>
-    <footer>
-        <p>© 2024 Fleta</p>
-    </footer>
-</body>
-</html>
+{% endblock %}
